@@ -10,7 +10,8 @@ import java.util.Scanner;
 
 public class registration {
 
-    public static void main(String[] args) throws IOException {
+    //public static void main(String[] args) throws IOException {
+    public void registerUser() throws IOException {
 
         System.out.println("Enter user id:");
         Scanner sc = new Scanner(System.in);

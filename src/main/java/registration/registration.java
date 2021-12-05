@@ -10,8 +10,8 @@ import java.util.Scanner;
 
 public class registration {
 
-    //public static void main(String[] args) throws IOException {
-    public void registerUser() throws IOException {
+    public static void main(String[] args) throws IOException {
+    //public void registerUser() throws IOException {
 
         System.out.println("Enter user id:");
         Scanner sc = new Scanner(System.in);
@@ -36,14 +36,21 @@ public class registration {
         System.out.println(userId);
         System.out.println(hashedUserId);
 
-        File file = new File("user.txt");
+        String stro = "\n"+hashedUserId + "///" + hashedPassword + "///" + security1 + "///" + security2 + "///" + security3;
+        try(FileWriter write = new FileWriter("user.txt", true);){
+            write.append(stro);
+        }catch (Exception e){
+            e.printStackTrace();
+        }
 
-        file.createNewFile();
-
-        FileWriter writer = new FileWriter(file);
-        writer.write(hashedUserId + "///" + hashedPassword + "///" + security1 + "///" + security2 + "///" + security3);
-        writer.flush();
-        writer.close();
+//        File file = new File("user.txt");
+//
+//        file.createNewFile();
+//
+//        FileWriter writer = new FileWriter(file);
+//        writer.write(hashedUserId + "///" + hashedPassword + "///" + security1 + "///" + security2 + "///" + security3);
+//        writer.flush();
+//        writer.close();
 
     }
 

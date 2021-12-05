@@ -1,0 +1,3 @@
+Table_Name#Column_Name#Datatype
+userdata#name#varchar
+userdata#id#int

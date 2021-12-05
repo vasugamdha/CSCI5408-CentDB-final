@@ -1,0 +1,17 @@
+{
+     "Sun Dec 05 14:47:10 AST 2021": {
+          "Status": "SUCCESSFUL",
+          "Query": "text",
+          "Execution Time": "2001 ms"
+     },
+     "Sun Dec 05 14:47:03 AST 2021": {
+          "Status": "SUCCESSFUL",
+          "Query": "text",
+          "Execution Time": "2014 ms"
+     },
+     "Sun Dec 05 14:46:09 AST 2021": {
+          "Status": "SUCCESSFUL",
+          "Query": "text",
+          "Execution Time": "2006 ms"
+     }
+}

@@ -1,7 +1,7 @@
 package app;
 
 import java.util.Scanner;
-
+import Transaction.TransactionInputHandler;
 import Queries.WriteQueries;
 
 
@@ -48,7 +48,16 @@ public class Input {
 						if (input1.equalsIgnoreCase("exit;")) {
 							System.out.println("Exit done!!");
 							break;
-						} else {
+						} 
+						
+						// transaction
+						else if (input1.equalsIgnoreCase("begin transaction;")) {
+							
+							TransactionInputHandler.handleTransactionInput(object, input1);
+						}
+						
+						
+						else {
 							WriteQueries writequery = new WriteQueries();
 							writequery.Write_Queries(input1);
 						}

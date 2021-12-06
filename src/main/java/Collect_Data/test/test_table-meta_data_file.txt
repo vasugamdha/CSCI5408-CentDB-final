@@ -1,0 +1,2 @@
+Table_Name#Column_Name#Datatype
+test_table#id#int

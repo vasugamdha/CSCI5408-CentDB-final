@@ -4,7 +4,6 @@ import java.util.Scanner;
 
 import Queries.WriteQueries;
 
-
 public class Input {
 
 	public void getInput() throws Exception {

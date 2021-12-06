@@ -1,8 +1,11 @@
 package Queries;
 
+import java.io.File;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+import ConstantFileValues.FileConstants;
 import Database.Database;
 import Parser.CreateQueryParser;
 import Parser.DeleteQueryParser;
@@ -55,6 +58,21 @@ public class WriteQueries {
 			System.err.print("Invalid keyword given!");
 		}
 
+	}
+
+	public List<String> returnListOfTables(String databaseName) throws Exception {
+		List<String> result = new ArrayList<>();
+		File file = new File(FileConstants.FilePath + "/" + databaseName);
+		File[] filesArray = file.listFiles();
+
+		for (int i = 0; i < filesArray.length; i++) {
+			if (filesArray[i].isFile()) {
+				if (!filesArray[i].getName().contains("meta_data_file")) {
+					result.add(filesArray[i].getName());
+				}
+			}
+		}
+		return result;
 	}
 
 }

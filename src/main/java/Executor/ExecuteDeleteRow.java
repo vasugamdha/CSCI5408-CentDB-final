@@ -24,43 +24,40 @@ public class ExecuteDeleteRow {
 		this.conditionColumnValue = conditionColumnValue;
 	}
 
-	public void deletefromTable(Database db) {
+	public void deletefromTable(Database db) throws Exception {
 
 		FileFormatHandler fileformatHandler = new FileFormatHandler();
 
-		try {
-			if (db.getDatabase() == null || db == null) {
-				System.err.print("Select Database");
-				throw new Exception();
-			}
-			Path path = Paths.get(FileConstants.FilePath, db.getDatabase());
-
-			if (!Files.exists(path)) {
-				System.err.println("Database does not exist!");
-				throw new Exception();
-			}
-			path = Paths.get(FileConstants.FilePath, db.getDatabase(), tableName + ".txt");
-			if (!Files.exists(path)) {
-				System.err.println("Table does not exist");
-				throw new Exception();
-			} else {
-				Map<String, String> columnNamesinTable = fileformatHandler.getColumnNamesInTable(db.getDatabase(), tableName);
-
-				List<String> columns = new ArrayList<String>(columnNamesinTable.keySet());
-
-				if (!(columns.contains(conditionColumnName))) {
-
-					System.err.println("check if your Column name in where condition is correct!");
-					throw new Exception();
-
-				}
-				
-				fileformatHandler.deleteFromTable(db.getDatabase(), tableName, conditionColumnName,conditionColumnValue);
-                System.out.println("Row succesfully deleted");
-			}
-		} catch (Exception e) {
-
+		if (db.getDatabase() == null || db == null) {
+			System.err.print("Select Database");
+			throw new Exception();
 		}
+		Path path = Paths.get(FileConstants.FilePath, db.getDatabase());
+
+		if (!Files.exists(path)) {
+			System.err.println("Database does not exist!");
+			throw new Exception();
+		}
+		path = Paths.get(FileConstants.FilePath, db.getDatabase(), tableName + ".txt");
+		if (!Files.exists(path)) {
+			System.err.println("Table does not exist");
+			throw new Exception();
+		} else {
+			Map<String, String> columnNamesinTable = fileformatHandler.getColumnNamesInTable(db.getDatabase(), tableName);
+
+			List<String> columns = new ArrayList<String>(columnNamesinTable.keySet());
+
+			if (!(columns.contains(conditionColumnName))) {
+
+				System.err.println("check if your Column name in where condition is correct!");
+				throw new Exception();
+
+			}
+
+			fileformatHandler.deleteFromTable(db.getDatabase(), tableName, conditionColumnName,conditionColumnValue);
+			System.out.println("Row succesfully deleted");
+		}
+
 	}
 
 }

@@ -13,7 +13,6 @@ public class Input {
 
 		while (true) {
 
-			try {
 				System.out.println("1. Write Queries 2. Export 3. Data Model 4. Analytics 5. Exit");
 				System.out.println("Enter the number of the operation you would like to perform: ");
 				try {
@@ -62,10 +61,6 @@ public class Input {
 					System.out.println(" Please try again!\n");
 					break;
 				}
-			} catch (Exception e) {
-				System.out.println(" Please try again!\n");
-			}
-
 		}
 
 		object.close();

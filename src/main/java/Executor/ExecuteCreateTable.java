@@ -22,39 +22,35 @@ public class ExecuteCreateTable {
 	}
 
 	public void CreateTable(Database db) throws Exception {
-		try {
-			if (db == null || db.getDatabase() == null) {
-				System.out.print("Select Database");
-				throw new Exception();
-			}
-			Path path = Paths.get(FileConstants.FilePath, db.getDatabase());
-
-			if (!Files.exists(path)) {
-				System.err.println("Database does not exist!");
-				throw new Exception();
-			}
-
-			path = Paths.get(FileConstants.FilePath, db.getDatabase(), TableName + ".txt");
-			if (Files.exists(path)) {
-				System.out.println(TableName + " table already exist!");
-				throw new Exception();
-
-			}
-
-			String[] data_type = { "int", "varchar", "date", "datetime", "text", "longtext", "decimal", "boolean",
-					"double", "timestamp", "float" };
-			for (String field : map.values()) {
-				if (!Arrays.stream(data_type).anyMatch(field::equalsIgnoreCase)) {
-					System.err.println("Incorrect datatypes!");
-					throw new Exception();
-				}
-			}
-			FileFormatHandler fileformatHandler = new FileFormatHandler();
-			fileformatHandler.TableCreation(db.getDatabase(), TableName, map);
-			System.out.println("Table created");
-
-		} catch (Exception e) {
-			e.printStackTrace();
+		if (db == null || db.getDatabase() == null) {
+			System.out.print("Select Database");
+			throw new Exception();
 		}
+		Path path = Paths.get(FileConstants.FilePath, db.getDatabase());
+
+		if (!Files.exists(path)) {
+			System.err.println("Database does not exist!");
+			throw new Exception();
+		}
+
+		path = Paths.get(FileConstants.FilePath, db.getDatabase(), TableName + ".txt");
+		if (Files.exists(path)) {
+			System.out.println(TableName + " table already exist!");
+			throw new Exception();
+
+		}
+
+		String[] data_type = { "int", "varchar", "date", "datetime", "text", "longtext", "decimal", "boolean",
+				"double", "timestamp", "float" };
+		for (String field : map.values()) {
+			if (!Arrays.stream(data_type).anyMatch(field::equalsIgnoreCase)) {
+				System.err.println("Incorrect datatypes!");
+				throw new Exception();
+			}
+		}
+		FileFormatHandler fileformatHandler = new FileFormatHandler();
+		fileformatHandler.TableCreation(db.getDatabase(), TableName, map);
+		System.out.println("Table created");
+
 	}
 }

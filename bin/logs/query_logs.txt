@@ -1,17 +1,115 @@
 {
-     "Sun Dec 05 14:47:10 AST 2021": {
+     "Mon Dec 06 02:06:53 AST 2021": {
           "Status": "SUCCESSFUL",
-          "Query": "text",
-          "Execution Time": "2001 ms"
+          "Query": "delete from datatab where id='0';",
+          "Database": "q",
+          "Execution time": 0
      },
-     "Sun Dec 05 14:47:03 AST 2021": {
+     "Mon Dec 06 02:05:41 AST 2021": {
           "Status": "SUCCESSFUL",
-          "Query": "text",
-          "Execution Time": "2014 ms"
+          "Query": "select name,id from datatab where id='1';",
+          "Database": "q",
+          "Execution time": 0
      },
-     "Sun Dec 05 14:46:09 AST 2021": {
+     "Mon Dec 06 02:04:08 AST 2021": {
           "Status": "SUCCESSFUL",
-          "Query": "text",
-          "Execution Time": "2006 ms"
+          "Query": "create table datatab (name varchar, id int);",
+          "Execution time": 38
+     },
+     "Mon Dec 06 02:04:35 AST 2021": {
+          "Status": "SUCCESSFUL",
+          "Query": "insert into datatab (name,id) values ('data2','2');",
+          "Database": "q",
+          "Execution time": 0
+     },
+     "Mon Dec 06 02:05:54 AST 2021": {
+          "Status": "SUCCESSFUL",
+          "Query": "select name,id from datatab where id='3';",
+          "Database": "q",
+          "Execution time": 0
+     },
+     "Mon Dec 06 02:06:44 AST 2021": {
+          "Status": "SUCCESSFUL",
+          "Query": "select * from datatab;",
+          "Database": "q",
+          "Execution time": 0
+     },
+     "Mon Dec 06 02:04:29 AST 2021": {
+          "Status": "SUCCESSFUL",
+          "Query": "insert into datatab (name,id) values ('data1','1');",
+          "Database": "q",
+          "Execution time": 15
+     },
+     "Mon Dec 06 02:03:29 AST 2021": {
+          "Status": "SUCCESSFUL",
+          "Query": "use s;",
+          "Database": "s",
+          "Execution time": 15
+     },
+     "Mon Dec 06 02:03:40 AST 2021": {
+          "Status": "SUCCESSFUL",
+          "Query": "create database q;",
+          "Database": "q",
+          "Execution time": 16
+     },
+     "Mon Dec 06 02:05:30 AST 2021": {
+          "Status": "SUCCESSFUL",
+          "Query": "select * from datatab;",
+          "Database": "q",
+          "Execution time": 0
+     },
+     "Mon Dec 06 02:07:03 AST 2021": {
+          "Status": "SUCCESSFUL",
+          "Query": "select * from datatab;",
+          "Database": "q",
+          "Execution time": 0
+     },
+     "Mon Dec 06 02:05:49 AST 2021": {
+          "Status": "SUCCESSFUL",
+          "Query": "select name,id from datatab where id='2';",
+          "Database": "q",
+          "Execution time": 0
+     },
+     "Mon Dec 06 02:06:17 AST 2021": {
+          "Status": "SUCCESSFUL",
+          "Query": "update datatab set id='0' where name='data1';",
+          "Database": "q",
+          "Execution time": 16
+     },
+     "Mon Dec 06 02:07:36 AST 2021": {
+          "Status": "SUCCESSFUL",
+          "Query": "select * from datatab;",
+          "Database": "q",
+          "Execution time": 0
+     },
+     "Mon Dec 06 02:10:22 AST 2021": {
+          "Status": "ERROR",
+          "Query": "drop table datatab;",
+          "Database": "q",
+          "Execution time": 0
+     },
+     "Mon Dec 06 02:07:26 AST 2021": {
+          "Status": "SUCCESSFUL",
+          "Query": "insert into datatab (name,id) values ('data1','1');",
+          "Database": "q",
+          "Execution time": 0
+     },
+     "Mon Dec 06 02:07:54 AST 2021": {
+          "Status": "SUCCESSFUL",
+          "Query": "insert into datatab (name,id) values ('data3','3');",
+          "Database": "q",
+          "Execution time": 0
+     },
+     "Mon Dec 06 02:08:07 AST 2021": {
+          "Status": "SUCCESSFUL",
+          "Query": "select * from datatab;",
+          "Database": "q",
+          "Execution time": 16
+     },
+     "Mon Dec 06 02:03:43 AST 2021": {
+          "Status": "SUCCESSFUL",
+          "Query": "use q;",
+          "Database": "q",
+          "Execution time": 0
      }
 }

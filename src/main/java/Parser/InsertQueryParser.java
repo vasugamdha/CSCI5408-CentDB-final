@@ -1,5 +1,9 @@
 package Parser;
 
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.StandardOpenOption;
 import java.util.Arrays;
 import java.util.LinkedHashMap;
 import java.util.List;
@@ -7,9 +11,18 @@ import java.util.Map;
 
 import Database.Database;
 import Executor.ExecuteInsertTable;
+import LogManagement.LogController;
+import LogManagement.LogType;
+import LogManagement.Status;
+import org.json.JSONObject;
 
 
 public class InsertQueryParser {
+
+	LogController lc = new LogController();/////
+	JSONObject logEntry = new JSONObject();/////
+	StringBuilder sb = new StringBuilder();
+	long start;/////
 
 	private String inputQuery;
 	private List<String> query;
@@ -20,7 +33,15 @@ public class InsertQueryParser {
 		this.query = query;
 	}
 
-	public void parse(Database db) throws Exception {
+	public void parse(Database db) {
+
+		start = System.currentTimeMillis();/////
+		logEntry.put("Query", inputQuery);/////
+		logEntry.put("Database", db.getDatabase());/////
+
+		sb.append(String.format("User: %s ### ", "userid"));
+		sb.append(String.format("Database: %s ### ", db.getDatabase()));
+
 		try {
 
 			String keyword1 = query.get(1);
@@ -84,7 +105,27 @@ public class InsertQueryParser {
 			ExecuteInsertTable executeinserttable = new ExecuteInsertTable(tableName, linkfieldvalue);
 			executeinserttable.InsertIntoTable(db);
 
+			logEntry.put("Status", Status.SUCCESSFUL);/////
+			logEntry.put("Execution time",System.currentTimeMillis()-start);/////
+			lc.log(LogType.QUERY, logEntry);/////
+
+			sb.append(String.format("Status: %s ### ",Status.SUCCESSFUL));
+			sb.append(String.format("Query: %s\n", inputQuery));
+			Files.write(Path.of("bin/analytics/logs.txt"), sb.toString().getBytes(), StandardOpenOption.CREATE, StandardOpenOption.APPEND);
+
 		} catch (Exception e) {
+
+			logEntry.put("Status",Status.ERROR);/////
+			logEntry.put("Execution time",System.currentTimeMillis()-start);/////
+			lc.log(LogType.QUERY, logEntry);/////
+
+			sb.append(String.format("Status: %s ### ",Status.ERROR));
+			sb.append(String.format("Query: %s\n", inputQuery));
+			try {
+				Files.write(Path.of("bin/analytics/logs.txt"), sb.toString().getBytes(), StandardOpenOption.CREATE, StandardOpenOption.APPEND);
+			} catch (IOException ex) {
+				ex.printStackTrace();
+			}
 
 		}
 	}

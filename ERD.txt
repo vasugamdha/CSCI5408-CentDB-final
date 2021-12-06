@@ -1,0 +1,8 @@
+Table_Name#Column_Name#Datatype
+students#name#varchar
+students#id#int
+
+Table_Name#Column_Name#Datatype
+courses#name#varchar
+courses#id#int
+

@@ -1,6 +1,8 @@
 package app;
 
 import java.util.Scanner;
+
+import ERD.ERDInputHandler;
 import Transaction.TransactionInputHandler;
 import Queries.WriteQueries;
 
@@ -56,7 +58,6 @@ public class Input {
 							TransactionInputHandler.handleTransactionInput(object, input1);
 						}
 						
-						
 						else {
 							WriteQueries writequery = new WriteQueries();
 							writequery.Write_Queries(input1);
@@ -65,7 +66,9 @@ public class Input {
 					break;
 
 				case 2:
-					System.out.println("Export");
+//					System.out.println("What do you want to export: 1. ERD 2.SQL dump");
+					ERDInputHandler.handleERDInput(object);
+					
 					break;
 				default:
 					System.out.println(" Please try again!\n");
@@ -76,9 +79,7 @@ public class Input {
 			}
 
 		}
-
 		object.close();
-
 	}
 
 }

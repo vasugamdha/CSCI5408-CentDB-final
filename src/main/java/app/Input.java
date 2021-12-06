@@ -2,8 +2,9 @@ package app;
 
 import java.util.Scanner;
 
-import Queries.WriteQueries;
 
+import Queries.WriteQueries;
+import Export.ExportModule;
 
 public class Input {
 
@@ -56,8 +57,31 @@ public class Input {
 					break;
 
 				case 2:
-					System.out.println("Export");
-					break;
+					while (true) {
+						System.out.println("[1] With Values \n[2] Without Values \n[3] Exit");
+						System.out.print(">> ");
+						
+						ExportModule exportModel = new ExportModule();
+						switch (object.nextLine()) {
+						case "1":
+							System.out.println("\nWrite the database name!");
+							System.out.print(">> ");
+							exportModel.ExportWithValues(object.nextLine().toLowerCase());
+							break;
+						case "2":
+							System.out.println("\nWrite the database name!");
+							System.out.print(">> ");
+							exportModel.ExportWithoutValues(object.nextLine().toLowerCase());
+							break;
+						case "3":
+							System.out.print("System Closed !");
+							System.exit(0);
+							break;
+						default:
+							System.out.println("\nUnknown Input. Please try again!\n");
+							break;
+						}
+					}
 				default:
 					System.out.println(" Please try again!\n");
 					break;

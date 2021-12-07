@@ -35,7 +35,7 @@ public class TableAnalytics {
             sc = new Scanner(file);
             while(sc.hasNextLine()){
                 String lineInFile = sc.nextLine();
-                if(lineInFile.contains(databaseDB) && lineInFile.contains(query) && lineInFile.contains(table)){
+                if(lineInFile.contains(databaseDB) && lineInFile.contains(query) && lineInFile.contains(table) && lineInFile.contains("SUCCESSFUL")){
                     count++;
                 }
             }

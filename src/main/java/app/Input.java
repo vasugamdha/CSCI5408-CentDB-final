@@ -95,8 +95,6 @@ public class Input {
 							}
 						}
 						break;
-					default:
-						System.out.println("Default");
 				}
 			} catch (Exception e) {
 				System.out.println(" Please try again!\n");

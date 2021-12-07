@@ -2,6 +2,7 @@ package app;
 
 import java.util.Scanner;
 
+import Export.ExportModule;
 import Queries.WriteQueries;
 
 public class Input {
@@ -34,41 +35,59 @@ public class Input {
 				}
 
 				switch (number) {
-				case 1:
-					String input1 = "";
-					while (true) {
-						System.out.println("\nWrite your Query:");
-						input1 = object.nextLine();
-						while (!input1.substring(input1.length() - 1).equalsIgnoreCase(";")) {
-							System.out.println("Missing Semicolon");
-							System.out.println("Write your query again:");
+					case 1:
+						String input1 = "";
+						while (true) {
+							System.out.println("\nWrite your Query:");
 							input1 = object.nextLine();
+							while (!input1.substring(input1.length() - 1).equalsIgnoreCase(";")) {
+								System.out.println("Missing Semicolon");
+								System.out.println("Write your query again:");
+								input1 = object.nextLine();
+							}
+							if (input1.equalsIgnoreCase("exit;")) {
+								System.out.println("Exit done!!");
+								break;
+							} else {
+								WriteQueries writequery = new WriteQueries();
+								writequery.Write_Queries(input1);
+							}
 						}
-						if (input1.equalsIgnoreCase("exit;")) {
-							System.out.println("Exit done!!");
-							break;
-						} else {
-							WriteQueries writequery = new WriteQueries();
-							writequery.Write_Queries(input1);
-						}
-					}
-					break;
+						break;
 
-				case 2:
-					System.out.println("Export");
-					break;
-				default:
-					System.out.println(" Please try again!\n");
-					break;
+					case 2:
+						while (true) {
+							System.out.println("[1] With Values \n[2] Without Values \n[3] Exit");
+							System.out.print(">> ");
+
+							ExportModule exportModel = new ExportModule();
+							switch (object.nextLine()) {
+								case "1":
+									System.out.println("\nWrite the database name!");
+									System.out.print(">> ");
+									exportModel.ExportWithValues(object.nextLine().toLowerCase());
+									break;
+								case "2":
+									System.out.println("\nWrite the database name!");
+									System.out.print(">> ");
+									exportModel.ExportWithoutValues(object.nextLine().toLowerCase());
+									break;
+								case "3":
+									System.out.print("System Closed !");
+									System.exit(0);
+									break;
+								default:
+									System.out.println("\nUnknown Input. Please try again!\n");
+									break;
+							}
+						}
 				}
 			} catch (Exception e) {
 				System.out.println(" Please try again!\n");
 			}
 
+			object.close();
+
 		}
-
-		object.close();
-
 	}
-
 }

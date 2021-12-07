@@ -5,12 +5,15 @@ import java.util.Scanner;
 
 public class AnalyticsInput {
 
-    public void analytics() throws FileNotFoundException {
+    public void analytics() throws Exception {
     //public static void main(String args[]) throws FileNotFoundException {
 
         System.out.println("Enter query for analytics:");
         Scanner sc1 = new Scanner(System.in);
         String userInput = sc1.nextLine();
+        if(userInput.equals(";;")){
+            throw new Exception();
+        }
         DatabaseAnalytics databaseAnalytics = new DatabaseAnalytics();
         TableAnalytics tableAnalytics = new TableAnalytics();
 

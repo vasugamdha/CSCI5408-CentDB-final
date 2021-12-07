@@ -2,6 +2,7 @@ package app;
 
 import java.util.Scanner;
 
+import Analytics.AnalyticsInput;
 import Export.ExportModule;
 import Queries.WriteQueries;
 
@@ -81,6 +82,21 @@ public class Input {
 									break;
 							}
 						}
+					case 4:
+						while (true) {
+							System.out.println("You chose Analytics!");
+							System.out.println("Enter ;; to exit.\n");
+							AnalyticsInput analyticsInput = new AnalyticsInput();
+							try {
+								analyticsInput.analytics();
+							} catch (Exception e) {
+								getInput();
+								break;
+							}
+						}
+						break;
+					default:
+						System.out.println("Default");
 				}
 			} catch (Exception e) {
 				System.out.println(" Please try again!\n");

@@ -36,7 +36,11 @@ public class HomePage {
             case 4:
                 System.out.println("You chose Analytics\n");
                 AnalyticsInput analyticsInput = new AnalyticsInput();
-                analyticsInput.analytics();
+                try {
+                    analyticsInput.analytics();
+                } catch (Exception e) {
+                    break;
+                }
                 break;
         }
 

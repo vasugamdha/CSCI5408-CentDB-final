@@ -3,9 +3,12 @@ package app;
 import java.util.Scanner;
 
 
+<<<<<<< HEAD
 import Queries.WriteQueries;
 import Export.ExportModule;
 
+=======
+>>>>>>> develop
 public class Input {
 
 	public void getInput() throws Exception {

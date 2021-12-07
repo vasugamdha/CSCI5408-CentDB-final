@@ -8,4 +8,6 @@ public class FileConstants {
 
 	public static String InsertDelimiter = "[#]";
 
+	public static String ERDPath = "src/main/java/ERD.txt";
+
 }

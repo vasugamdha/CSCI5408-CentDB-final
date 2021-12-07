@@ -40,12 +40,12 @@ public class ERDExecutor {
 		StringBuilder sb = new StringBuilder();
 		for (String metaData : metaDatas) {
 			sb.append(metaData + "\n");
-			System.out.println(metaData);
 		}
 		
 		String contents = sb.toString();
 		
 		ERDWriter writer = new ERDWriter();
 		writer.writeFile(FileConstants.ERDPath, contents);
+		System.out.println("export to ERD.txt");
 	}
 }

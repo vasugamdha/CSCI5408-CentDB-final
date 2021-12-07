@@ -65,10 +65,8 @@ public class Input {
 					}
 					break;
 
-				case 2:
-//					System.out.println("What do you want to export: 1. ERD 2.SQL dump");
+				case 3:
 					ERDInputHandler.handleERDInput(object);
-					
 					break;
 				default:
 					System.out.println(" Please try again!\n");

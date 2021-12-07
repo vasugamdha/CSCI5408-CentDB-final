@@ -1,0 +1,3 @@
+Table_Name#Column_Name#Datatype
+test_table2#name#varchar
+test_table2#id#int

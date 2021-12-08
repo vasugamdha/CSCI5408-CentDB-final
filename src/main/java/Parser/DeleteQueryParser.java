@@ -34,6 +34,7 @@ public class DeleteQueryParser {
 		logEntry.put("Status", status);
 		logEntry.put("Execution time (in ms)",executionTime);
 		lc.log(LogType.QUERY, logEntry);
+		lc.log(LogType.GENERAL, logEntry);
 
 		sb.append(String.format("Status: %s ### ", status));
 		sb.append(String.format("Query: %s\n", query));

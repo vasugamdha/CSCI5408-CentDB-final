@@ -16,7 +16,7 @@ public class LogController {
 
     public void log(LogType type, JSONObject element) {
         if(type == LogType.GENERAL){
-            generalLogs.log(element);
+            generalLogs.log();
         }else if(type == LogType.EVENT){
             eventLogs.log(element);
         }else if(type == LogType.QUERY){

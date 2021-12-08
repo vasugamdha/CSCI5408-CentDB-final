@@ -1,0 +1,12 @@
+{
+     "Wed Dec 08 06:26:05 AST 2021": {
+          "Status": "Transaction end",
+          "Transaction execution time (seconds)": 488,
+          "Queries": [
+               "use vasu",
+               "create database transactiontest",
+               "use transactiontest"
+          ],
+          "User": "vasugamdha"
+     }
+}

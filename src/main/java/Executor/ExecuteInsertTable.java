@@ -61,7 +61,7 @@ public class ExecuteInsertTable {
 				System.out.println("Values inserted into" + "\t" + tableName);
 			}
 		} catch (Exception e) {
-			e.printStackTrace();
+			
 		}
 	}
 

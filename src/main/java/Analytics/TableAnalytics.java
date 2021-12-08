@@ -5,6 +5,7 @@ import Queries.WriteQueries;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class TableAnalytics implements ITableAnalytics{
@@ -21,7 +22,7 @@ public class TableAnalytics implements ITableAnalytics{
 
         WriteQueries writeQueries = new WriteQueries();
 
-        ArrayList<String> listOfTableInDb = writeQueries.returnListOfTables(databaseDB);
+        List<String> listOfTableInDb = writeQueries.returnListOfTables(databaseDB);
 
         for(String table : listOfTableInDb){
             int count = 0;

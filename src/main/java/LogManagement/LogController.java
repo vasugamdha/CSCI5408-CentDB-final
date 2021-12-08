@@ -7,13 +7,11 @@ public class LogController {
     private final GeneralLogs generalLogs;
     private final EventLogs eventLogs;
     private final QueryLogs queryLogs;
-    public String text;
 
     public LogController() {
         generalLogs = new GeneralLogs();
         eventLogs = new EventLogs();
         queryLogs = new QueryLogs();
-        this.text = text;
     }
 
     public void log(LogType type, JSONObject element) {

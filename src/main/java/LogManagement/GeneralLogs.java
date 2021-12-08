@@ -33,34 +33,4 @@ public class GeneralLogs {
             e.printStackTrace();
         }
     }
-
-
-    public void log(String text, long time, Status status) {
-        JSONObject main = getData();
-        JSONObject element = new JSONObject();
-
-        element.put("Query", text);
-        element.put("Execution Time", String.format("%s ms",time));
-        element.put("Status", status);
-        main.put(new Date().toString(),element);
-
-        System.out.println(main.toString(5));
-        try {
-            if (!Files.exists(path)) {
-                Files.createFile(path);
-            }
-            Files.write(path, main.toString(5).getBytes());
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
-    public static void main(String[] args) throws InterruptedException {
-        GeneralLogs l = new GeneralLogs();
-
-        long start = System.currentTimeMillis();
-        Thread.sleep(2000);
-        long end = System.currentTimeMillis();
-
-        l.log("text",end-start, Status.SUCCESSFUL);
-    }
 }

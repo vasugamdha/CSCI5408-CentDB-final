@@ -33,32 +33,5 @@ public class QueryLogs {
             e.printStackTrace();
         }
     }
-
-    public void log(String text, long time, Status status) {
-        JSONObject main = getData();
-        JSONObject element = new JSONObject();
-
-        element.put("Query", text);
-        element.put("Execution Time", String.format("%s ms",time));
-        element.put("Status", status);
-        main.put(new Date().toString(),element);
-
-        System.out.println(main.toString(5));
-        try {
-            Files.write(path, main.toString(5).getBytes());
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
-
-    public static void main(String[] args) throws InterruptedException {
-        QueryLogs q = new QueryLogs();
-
-        long start = System.currentTimeMillis();
-        Thread.sleep(200);
-        long end = System.currentTimeMillis();
-
-        q.log("text",end-start, Status.SUCCESSFUL);
-    }
 }
 

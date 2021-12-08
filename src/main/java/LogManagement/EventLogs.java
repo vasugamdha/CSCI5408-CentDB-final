@@ -11,8 +11,6 @@ import java.nio.file.StandardOpenOption;
 import java.util.Date;
 
 public class EventLogs {
-    private static final OpenOption APPEND = StandardOpenOption.APPEND;
-    private static final OpenOption CREATE = StandardOpenOption.APPEND;
     private final Path path;
 
     public EventLogs() {

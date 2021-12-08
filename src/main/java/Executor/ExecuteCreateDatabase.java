@@ -37,7 +37,7 @@ public class ExecuteCreateDatabase {
 				}
 			}
 		} catch (Exception e) {
-			e.printStackTrace();
+			
 		}
 	}
 }

@@ -18,7 +18,7 @@ public class login implements Ilogin{
         String userId = sc.nextLine();
         System.out.println("Enter password:");
         String password = sc.nextLine();
-        int random = new Random().nextInt()%3 +1;
+        int random = new Random().nextInt(3)+1;
         System.out.println(Constants.securityQuestions.get(random));
         String security1 = sc.nextLine();
 

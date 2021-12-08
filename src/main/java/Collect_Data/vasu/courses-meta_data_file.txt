@@ -1,0 +1,3 @@
+Table_Name#Column_Name#Datatype
+courses#CourseID#int
+courses#CourseName#varchar

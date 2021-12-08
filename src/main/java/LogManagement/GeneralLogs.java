@@ -57,7 +57,6 @@ public class GeneralLogs {
                 try (Stream<Path> run = Files.walk(Paths.get(path))) {
                     List<String> files = run.filter(Files::isRegularFile)
                             .map(Path::toString).collect(Collectors.toList());
-                    files.forEach(System.out::println);
                     for (String file: files){
                         if(file.contains("meta_data_file")){
                             tables++;

@@ -4,3 +4,6 @@ User: vasugamdha ### Database: vasu ### Status: SUCCESSFUL ### Query: create tab
 User: vasugamdha ### Database: vasu ### Status: ERROR ### Query: insert into;
 User: vasugamdha ### Database: vasu ### Status: SUCCESSFUL ### Query: insert into courses (CourseName,CourseID) values (1,"DATA");
 User: vasugamdha ### Database: vasu ### Status: SUCCESSFUL ### Query: insert into courses (CourseName,CourseID) values (2,"ASD");
+User: vasugamdha ### Database: vasu ### Status: SUCCESSFUL ### Query: create database x;
+User: vasugamdha ### Database: vasu ### Status: SUCCESSFUL ### Query: create table p(a int, b int);
+User: vasugamdha ### Database: vasu ### Status: SUCCESSFUL ### Query: insert into p (a,b) values (1,2);

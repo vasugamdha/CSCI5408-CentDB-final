@@ -26,6 +26,8 @@ public class UseQueryParser {
 	StringBuilder sb = new StringBuilder();
 	long start;
 
+	String DB_Name = null;
+
 	public UseQueryParser(String inputQuery, List<String> query) {
 		super();
 		this.inputQuery = inputQuery;
@@ -57,7 +59,7 @@ public class UseQueryParser {
 		sb.append(String.format("User: %s ### ", Constants.userid));
 
 		try {
-			String DB_Name = query.get(1);
+			DB_Name = query.get(1);
 			DB_Name = DB_Name.replace(";", "");
 			Path path_of_file = Paths.get(FileConstants.FilePath, DB_Name);
 			if (!Files.exists(path_of_file)) {
@@ -66,13 +68,17 @@ public class UseQueryParser {
 				return db;
 			} else {
 				System.out.println("You are in" + "\t" + DB_Name + "\t" + "database");
-				log(inputQuery,db.getDatabase(), Status.SUCCESSFUL, System.currentTimeMillis()-start);
+				try {
+					log(inputQuery, db.getDatabase(), Status.SUCCESSFUL, System.currentTimeMillis() - start);
+				}catch (Exception e) {}
 			}
 			db = new Database(DB_Name);
 			return db;
 
 		} catch (Exception e){
-			log(inputQuery,db.getDatabase(), Status.ERROR, System.currentTimeMillis()-start);
+			try {
+				log(inputQuery,db.getDatabase(), Status.ERROR, System.currentTimeMillis()-start);
+			}catch (Exception ex) {}
 		}
 		return db;
 	}

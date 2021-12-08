@@ -112,12 +112,16 @@ public class Input {
 					}
 					break;
 
-				
+				case 5:
+					System.exit(0);
+					break;
+
 				default:
 					System.out.println(" Please try again!\n");
 					break;
 				}
 			} catch (Exception e) {
+				e.printStackTrace();
 				System.out.println(" Please try again!\n");
 			}
 

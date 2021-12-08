@@ -26,7 +26,7 @@ public class UseQueryParser {
 	StringBuilder sb = new StringBuilder();
 	long start;
 
-	String DB_Name = null;
+	String DB_Name;
 
 	public UseQueryParser(String inputQuery, List<String> query) {
 		super();
@@ -69,7 +69,7 @@ public class UseQueryParser {
 			} else {
 				System.out.println("You are in" + "\t" + DB_Name + "\t" + "database");
 				try {
-					log(inputQuery, db.getDatabase(), Status.SUCCESSFUL, System.currentTimeMillis() - start);
+					log(inputQuery, DB_Name, Status.SUCCESSFUL, System.currentTimeMillis() - start);
 				}catch (Exception e) {}
 			}
 			db = new Database(DB_Name);
@@ -77,7 +77,7 @@ public class UseQueryParser {
 
 		} catch (Exception e){
 			try {
-				log(inputQuery,db.getDatabase(), Status.ERROR, System.currentTimeMillis()-start);
+				log(inputQuery,DB_Name, Status.ERROR, System.currentTimeMillis()-start);
 			}catch (Exception ex) {}
 		}
 		return db;

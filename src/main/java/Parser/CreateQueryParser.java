@@ -61,7 +61,7 @@ public class CreateQueryParser {
                 executecreateDb.executeCreateDb();
 
                 try {
-                    log(inputQuery, db.getDatabase(), Status.SUCCESSFUL, System.currentTimeMillis() - start);
+                    log(inputQuery, DB_Name, Status.SUCCESSFUL, System.currentTimeMillis() - start);
                 } catch (Exception e) {
                 }
             } else if (query.get(1).equalsIgnoreCase("table")){
@@ -87,19 +87,19 @@ public class CreateQueryParser {
                 ExecuteCreateTable executecreateTable = new ExecuteCreateTable(Map, tableName);
                 executecreateTable.CreateTable(db);
                 try {
-                    log(inputQuery, db.getDatabase(), Status.SUCCESSFUL, System.currentTimeMillis() - start);
+                    log(inputQuery, DB_Name, Status.SUCCESSFUL, System.currentTimeMillis() - start);
                 } catch (Exception e) { }
             } else {
                 System.err.println("Invalid Keyword!!");
                 try {
-                    log(inputQuery, db.getDatabase(), Status.ERROR, System.currentTimeMillis() - start);
+                    log(inputQuery, DB_Name, Status.ERROR, System.currentTimeMillis() - start);
                 } catch (Exception e) {
                 }
             }
 
         } catch (Exception e) {
             System.err.println("Check your Syntax");
-            log(inputQuery, db.getDatabase(), Status.ERROR, System.currentTimeMillis() - start);
+            log(inputQuery, DB_Name, Status.ERROR, System.currentTimeMillis() - start);
         }
     }
 }

@@ -54,7 +54,7 @@ public class ExecuteCreateTable {
 			System.out.println("Table created");
 
 		} catch (Exception e) {
-			e.printStackTrace();
+			
 		}
 	}
 }

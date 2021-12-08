@@ -10,8 +10,6 @@ import java.util.Scanner;
 
 public class TableAnalytics implements ITableAnalytics{
 
-    //HomePage homePage = new HomePage();
-
     public void tableAnalysis(String userInput) throws Exception {
 
         String query = userInput.split(" ")[1];

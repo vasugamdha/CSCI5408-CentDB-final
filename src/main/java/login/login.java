@@ -4,9 +4,8 @@ import app.Main;
 import com.google.common.hash.Hashing;
 
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.IOException;
 import java.nio.charset.StandardCharsets;
+import java.util.Random;
 import java.util.Scanner;
 
 public class login implements Ilogin{
@@ -19,7 +18,8 @@ public class login implements Ilogin{
         String userId = sc.nextLine();
         System.out.println("Enter password:");
         String password = sc.nextLine();
-        System.out.println("What is your birth city?");
+        int random = new Random().nextInt()%3 +1;
+        System.out.println(Constants.securityQuestions.get(random));
         String security1 = sc.nextLine();
 
         String hashedUserId = Hashing.sha256()
@@ -41,6 +41,7 @@ public class login implements Ilogin{
                 String lineInFile = sc1.nextLine();
                 if(lineInFile.contains(hashedUserId) && lineInFile.contains(hashedPassword)){
                     System.out.println("Login successful");
+                    Constants.userid = userId;
                     loginSuccess=1;
                 }
             }

@@ -14,7 +14,7 @@ public class TransactionExecutor {
 			try {
 				writeQueries.Write_Queries(query);
 			} catch (Exception e) {
-				e.printStackTrace();
+				
 			}
 		}
 	}

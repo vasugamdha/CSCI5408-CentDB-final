@@ -7,11 +7,11 @@ import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class TableAnalytics {
+public class TableAnalytics implements ITableAnalytics{
 
     //HomePage homePage = new HomePage();
 
-    public void tableAnalysis(String userInput) throws FileNotFoundException {
+    public void tableAnalysis(String userInput) throws Exception {
 
         String query = userInput.split(" ")[1];
         String databaseDB = userInput.split(" ")[2];
@@ -21,14 +21,7 @@ public class TableAnalytics {
 
         WriteQueries writeQueries = new WriteQueries();
 
-        //to be included when everything's integrated
-        //ArrayList<String> listOfTableInDb = writeQueries.returnListOfTables(databaseDB);
-
-
-        ArrayList<String> listOfTableInDb = new ArrayList<>(){{
-            add("Employee");
-            add("Department");
-        }};
+        ArrayList<String> listOfTableInDb = writeQueries.returnListOfTables(databaseDB);
 
         for(String table : listOfTableInDb){
             int count = 0;

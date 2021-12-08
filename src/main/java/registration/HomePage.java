@@ -39,7 +39,8 @@ public class HomePage {
                 try {
                     analyticsInput.analytics();
                 } catch (Exception e) {
-                    break;
+                    //getInput();
+                    e.printStackTrace();
                 }
                 break;
         }

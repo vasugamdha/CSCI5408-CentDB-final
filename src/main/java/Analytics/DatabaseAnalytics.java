@@ -8,9 +8,7 @@ import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Scanner;
 
-public class DatabaseAnalytics {
-
-    //HomePage homePage = new HomePage();
+public class DatabaseAnalytics implements IDatabaseAnalytics{
 
     public void databaseAnalysis(String userInput) throws FileNotFoundException {
 

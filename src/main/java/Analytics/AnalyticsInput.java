@@ -6,7 +6,6 @@ import java.util.Scanner;
 public class AnalyticsInput {
 
     public void analytics() throws Exception {
-    //public static void main(String args[]) throws FileNotFoundException {
 
         System.out.println("Enter query for analytics:");
         Scanner sc1 = new Scanner(System.in);
@@ -14,8 +13,8 @@ public class AnalyticsInput {
         if(userInput.equals(";;")){
             throw new Exception();
         }
-        DatabaseAnalytics databaseAnalytics = new DatabaseAnalytics();
-        TableAnalytics tableAnalytics = new TableAnalytics();
+        IDatabaseAnalytics databaseAnalytics = new DatabaseAnalytics();
+        ITableAnalytics tableAnalytics = new TableAnalytics();
 
         String query = userInput.split(" ")[1];
 

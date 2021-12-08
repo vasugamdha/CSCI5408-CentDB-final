@@ -60,19 +60,31 @@ public class WriteQueries {
 
 	}
 
-	public List<String> returnListOfTables(String databaseName) throws Exception {
-		List<String> result = new ArrayList<>();
-		File file = new File(FileConstants.FilePath + "/" + databaseName);
-		File[] filesArray = file.listFiles();
+//	public List<String> returnListOfTables(String databaseName) throws Exception {
+//		List<String> result = new ArrayList<>();
+//		File file = new File(FileConstants.FilePath + "/" + databaseName);
+//		File[] filesArray = file.listFiles();
+//
+//		for (int i = 0; i < filesArray.length; i++) {
+//			if (filesArray[i].isFile()) {
+//				if (!filesArray[i].getName().contains("meta_data_file")) {
+//					result.add(filesArray[i].getName());
+//				}
+//			}
+//		}
+//		return result;
+//	}
 
-		for (int i = 0; i < filesArray.length; i++) {
-			if (filesArray[i].isFile()) {
-				if (!filesArray[i].getName().contains("meta_data_file")) {
-					result.add(filesArray[i].getName());
-				}
-			}
-		}
-		return result;
+	public ArrayList<String> returnListOfTables(String databaseName) throws Exception {
+//		List<String> result = new ArrayList<>();
+//		File file = new File(FileConstants.FilePath + "/" + databaseName);
+//		File[] filesArray = file.listFiles();
+
+		ArrayList<String> listOfTableInDb = new ArrayList<>(){{
+			add("dalhousie");
+			add("halifax");
+		}};
+		return listOfTableInDb;
 	}
 
 }

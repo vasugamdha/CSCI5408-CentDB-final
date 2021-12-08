@@ -1,20 +1,24 @@
-User: rikin201 ### Database: DB1 ### Status: SUCCESSFUL ### Query: update Department dalhousie
-User: vasu007 ### Database: DB2 ### Status: SUCCESSFUL ### Query: CREATE DATABASE dalhousie 
-User: vasu007 ### Database: DB1 ### Status: SUCCESSFUL ### Query: CREATE DATABASE killam 
-User: micheal ### Database: DB2 ### Status: UnSUCCESSFUL ### Query: CREATE DATABASE killam 
-User: rikin201 ### Database: DB1 ### Status: SUCCESSFUL ### Query: update Employee halifax
-User: rikin201 ### Database: DB1 ### Status: SUCCESSFUL ### Query: update Department dalhousie
-User: vasu007 ### Database: DB2 ### Status: SUCCESSFUL ### Query: CREATE DATABASE dalhousie
-User: vasu007 ### Database: DB1 ### Status: SUCCESSFUL ### Query: CREATE DATABASE killam
-User: micheal ### Database: DB2 ### Status: SUCCESSFUL ### Query: CREATE DATABASE killam
-User: rikin201 ### Database: DB1 ### Status: SUCCESSFUL ### Query: update Employee halifax
-User: rikin201 ### Database: DB1 ### Status: SUCCESSFUL ### Query: insert Department dalhousie
-User: vasu007 ### Database: DB2 ### Status: SUCCESSFUL ### Query: CREATE DATABASE dalhousie
-User: vasu007 ### Database: DB1 ### Status: SUCCESSFUL ### Query: CREATE DATABASE killam
-User: micheal ### Database: DB2 ### Status: UnSUCCESSFUL ### Query: CREATE DATABASE killam
-User: rikin201 ### Database: DB1 ### Status: SUCCESSFUL ### Query: insert Employee halifax
-User: rikin201 ### Database: DB1 ### Status: SUCCESSFUL ### Query: insert Department dalhousie
-User: vasu007 ### Database: DB2 ### Status: SUCCESSFUL ### Query: CREATE DATABASE dalhousie
-User: vasu007 ### Database: DB1 ### Status: SUCCESSFUL ### Query: CREATE DATABASE killam
-User: micheal ### Database: DB2 ### Status: UnSUCCESSFUL ### Query: CREATE DATABASE killam
-User: rikin201 ### Database: DB1 ### Status: ERROR ### Query: insert Employee halifax
+User: rikin201 ### Database: DB1 ### Status: SUCCESSFUL ### Query: delete from dalhousie where student_id = 55
+User: rikin201 ### Database: DB1 ### Status: SUCCESSFUL ### Query: update dalhousie set subject1 = "data5408" where subject1 = "communication skills"
+User: vasu007 ### Database: DB2 ### Status: SUCCESSFUL ### Query: delete from dalhousie where student_id = 59
+User: vasu007 ### Database: DB1 ### Status: SUCCESSFUL ### Query: delete from dalhousie where student_id = 44
+User: micheal ### Database: DB2 ### Status: ERROR ### Query: delete from dalhousie where student_id = 00
+User: rikin201 ### Database: DB1 ### Status: SUCCESSFUL ### Query: update Halifax set area = "green street" where area = "bayers road"
+User: rikin201 ### Database: DB1 ### Status: SUCCESSFUL ### Query: update dalhousie set subject1 = "data5408" where subject1 = "communication skills"
+User: vasu007 ### Database: DB2 ### Status: SUCCESSFUL ### Query: delete from dalhousie where student_id = 37
+User: vasu007 ### Database: DB1 ### Status: SUCCESSFUL ### Query: delete from dalhousie where student_id = 31
+User: rikin201 ### Database: DB1 ### Status: SUCCESSFUL ### Query: update Halifax set area = "bayers road" where area = "green street"
+User: rikin201 ### Database: DB1 ### Status: SUCCESSFUL ### Query: insert into dalhousie ( student_id, subject1 ) values ( 55, "communication skills" );
+User: vasu007 ### Database: DB2 ### Status: SUCCESSFUL ### Query: delete from dalhousie where student_id = 25
+User: rikin201 ### Database: DB1 ### Status: SUCCESSFUL ### Query: insert into halifax ( area, pincode ) values ( "bayers road", "B3L4P2" );
+User: rikin201 ### Database: DB1 ### Status: SUCCESSFUL ### Query: insert into dalhousie ( student_id, subject1 ) values ( 55, "communication skills" );
+User: vasu007 ### Database: DB2 ### Status: SUCCESSFUL ### Query: delete from dalhousie where student_id = 29
+User: vasu007 ### Database: DB1 ### Status: SUCCESSFUL ### Query: delete from dalhousie where student_id = 87
+User: micheal ### Database: DB2 ### Status: ERROR ### Query: delete from dalhousie where student_id = 4
+User: rikin201 ### Database: DB1 ### Status: ERROR ### Query: insert into halifax ( area, pincode ) values ( "quinpool", "B3L4P9" );
+User: rikin201 ### Database: DB1 ### Status: SUCCESSFUL ### Query: insert into halifax ( area, pincode ) values ( "point pleasant", "B3H4P5" );
+User: rikin201 ### Database: DB1 ### Status: SUCCESSFUL ### Query: insert into dalhousie ( student_id, subject1 ) values ( 55, "communication skills" );
+User: vasu007 ### Database: DB2 ### Status: SUCCESSFUL ### Query: delete from dalhousie where student_id = 98 dalhousie
+User: vasu007 ### Database: DB1 ### Status: SUCCESSFUL ### Query: delete from dalhousie where student_id = 81 killam
+User: micheal ### Database: DB2 ### Status: ERROR ### Query: delete from dalhousie where student_id = 83 killam
+User: rikin201 ### Database: DB1 ### Status: ERROR ### Query: insert into halifax ( area, pincode ) values ( "mumford", "B3H4J8" );

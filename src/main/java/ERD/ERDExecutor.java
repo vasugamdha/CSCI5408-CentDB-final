@@ -39,7 +39,25 @@ public class ERDExecutor {
 		
 		StringBuilder sb = new StringBuilder();
 		for (String metaData : metaDatas) {
-			sb.append(metaData + "\n");
+			sb.append(metaData);
+			
+			String[] words = metaData.split("[# ]");
+			String pk = "";
+			String fk = "";
+			String fkTable = "";
+			
+			for (int i = 0; i < words.length; i++) {
+				if (words[i].equals("pk")) {
+					pk = words[i + 1];
+				}
+				if (words[i].equals("fk")) {
+					fk = words[i + 1];
+					fkTable = words[i + 2];
+				}
+			}
+			
+			sb.append("pk:" + pk + "\n");
+			sb.append("fk:" + fk + " -> " + fkTable + "\n" + "\n");
 		}
 		
 		String contents = sb.toString();
